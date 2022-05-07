@@ -3,19 +3,11 @@ from pydantic import BaseModel, Field
 
 class TaskBase(BaseModel):
     title: Optional[str] = Field(None, example="クリーニング")
-
-class TaskCreate(TaskBase):
-    pass
-
-class TaskCreateResponse(TaskCreate):
-    id: int
-
-    class Config:
-        orm_mode = True
+    description: Optional[str] = Field(None, example="詳細")
 
 class Task(TaskBase):
-    id: int
-    done: bool = Field(False, description="完了フラグ")
-    
-    class Config:
-        orm_mode = True
+    # class TaskBase(BaseModel):
+    # title: Optional[str] = Field(None, example="クリーニング")
+    # description: Optional[str] = Field(None, example="詳細")
+    id: str
+    isFinished: bool = Field(False, description="完了フラグ")

@@ -1,3 +1,13 @@
 fastapi
 uvicorn
 motor
+passlib[bcrypt]
+python-jose
+cryptography
+python-multipart
+
+jwt
+fastapi-csrf-protect
+python-decouple
+gunicorn
+pymongo
